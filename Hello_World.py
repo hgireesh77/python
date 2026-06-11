@@ -1,9 +1,9 @@
 import os
+import sys
 
-name = (
-    os.environ.get("SEMAPHORE_NAME") or 
-    os.environ.get("name") or 
-    os.environ.get("SEMAPHORE_SURVEY_NAME") or
-    "No Name Provided"
-)
+# sys.argv[0] is the script name itself, sys.argv[1] is the first argument passed
+if len(sys.argv) > 1:
+    name = sys.argv[1]
+else:
+    name = "Default Guest"
 print(f"Hello World....{name}")
